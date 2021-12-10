@@ -77,3 +77,75 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+@extends('layouts.main_layout')
+@section('content')
+<div class="RecentAuction">
+    <div class="container">
+      <div class="RecentAuction-content">
+        <h2 class="p-2">Recent Auctions</h2>
+        <div class="row">
+           @foreach($projects as $project)
+            <div class="col-3 col-3 mb-4 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="text-center">{{$project->name}}</h5>
+                        <a data-toggle="modal" class="btn btn-danger" id="smallButton" data-target="#smallModal" data-attr="{{ route('delete', $project->id) }}" title="Delete Project">
+                            <i class="fas fa-trash text-danger fa-lg"></i>
+                        </a>  
+                     
+                    </div>
+                </div>
+            </div>
+           @endforeach
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="removeBackdrop()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="smallBody">
+                <div>
+                    <!-- the result to be displayed apply here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+@section('script')
+function removeBackdrop(){
+    $('.modal-backdrop').remove();
+}
+$(document).on('click', '#smallButton', function(event) {
+    event.preventDefault();
+    let href = $(this).attr('data-attr');
+    $.ajax({
+        url: href
+        , beforeSend: function() {
+            $('#loader').show();
+        },
+        // return the result
+        success: function(result) {
+            $('#smallModal').modal("show");
+            $('#smallBody').html(result).show();
+        }
+        , complete: function() {
+            $('#loader').hide();
+        }
+        , error: function(jqXHR, testStatus, error) {
+            console.log(error);
+            alert("Page " + href + " cannot open. Error:" + error);
+            $('#loader').hide();
+        }
+        , timeout: 8000
+    })
+});
+@endsection
+

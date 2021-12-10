@@ -22,7 +22,6 @@
                                            value="{{app('request')->get('email')}}">
                                 </div>
 
-
                                 <div class="form-action col-sm-12 text-right">
                                     <input type="submit" value="{{trans('lang.search')}}" class="btn btn-primary">
                                     <a class="btn btn-default"

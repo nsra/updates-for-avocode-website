@@ -7,7 +7,7 @@
 }
 
 body{ 
-    font-family: "JF Flat Regular", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "JF Flat Regular";
     background-color:#F8F8FA;
 }
 
@@ -30,7 +30,7 @@ body{
 }
 .avc img{
      width: 120px;
-     height: 45px;
+     margin-right: 5px;
 }
 
 /* end avocode*/
@@ -107,7 +107,7 @@ body{
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 15px;
     padding: 3px 5%;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 .our-service .services{
     border-radius: 15px;
@@ -212,11 +212,11 @@ body{
      background-size: cover; height:250px; display: flex; align-items: center;
 }
 .sec-slider h1{
-    color: #fff;
+    /* color: #fff; */
     font: Bold 25px/35px Noto Kufi Arabic;
 }
 .sec-slider h5{
-   color: #FFFFFF;
+   /* color: #FFFFFF; */
    font:18px/35px Noto Kufi Arabic;
     opacity: .9;
 }

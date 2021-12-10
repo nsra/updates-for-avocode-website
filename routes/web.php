@@ -146,7 +146,6 @@ Route::get('/client_review/{id?}', ['as' => 'client_review.destroy', 'uses' => '
     Route::get('/order_step/{id?}', ['as' => 'order_step.destroy', 'uses' => 'Order_stepsController@destroy'])->middleware('permission:delete order_steps');
     Route::get('/ad/{id?}', ['as' => 'ad.destroy', 'uses' => 'AdsController@destroy'])->middleware('permission:delete ads');
 
-
     Route::get('cms/admins/permissions/{id}', ['as' => 'admin.view_permissions', 'uses' => 'AdminsController@view_permissions'])->middleware('permission:read permissions');
     Route::post('/update/admin/permissions', ['as'=>'update_admin_permissions','uses'=>'AdminsController@update_admin_permissions'])->middleware('permission:edit permissions');
     Route::post('/permissionbyrole', ['as'=>'get_permissions_by_role','uses'=>'AdminsController@get_permissions_by_role'])->middleware('permission:edit permissions');

@@ -72,8 +72,8 @@ License: You must have a valid license purchased only from themeforest(the above
                 @yield('breadcrumb')
 
                 @yield('body')
-                <div class="row col-12 avocode" >
-                    <img src="{{asset('/control/assets/layouts/layout/img/toptech.jpg')}}" width="45%"/>
+                <div class="row col-12 avocode d-flex" style="align-items: center; justify-content:center">
+                    <img src="{{asset('/control/assets/layouts/layout/img/toptech.jpg')}}" style="margin-top: 10%" width="20%"/>
                 </div>
                 <!-- END PAGE HEADER-->
             </div>

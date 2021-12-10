@@ -21,7 +21,7 @@ class CreateAdTranslationsTable extends Migration
             $table->string('description');
             $table->string('button');
             $table->unsignedBigInteger('ad_id');
-            $table->foreign('ad_id')->references('id')->on('ads')->onDelete('cascade');;
+            $table->foreign('ad_id')->references('id')->on('ads')->onDelete('cascade');
             $table->unique(['ad_id', 'locale']);
             $table->timestamps();
         });
