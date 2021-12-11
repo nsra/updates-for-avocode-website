@@ -5,7 +5,7 @@
         <div class="page-logo">
             <a href="/">
                 
-                <img src="{{asset('/control/assets/layouts/layout/img/toptech2.jpg')}}" alt="logo" width="40px" style="margin-top:7%" height="33px" class="logo-default"/> </a>
+                <img src="{{asset('/control/assets/layouts/layout/img/toptech.jpg')}}" alt="logo" width="40px" style="margin-top:7%" height="33px" class="logo-default"/> </a>
             <div class="menu-toggler sidebar-toggler">
                 <span></span>
             </div>
