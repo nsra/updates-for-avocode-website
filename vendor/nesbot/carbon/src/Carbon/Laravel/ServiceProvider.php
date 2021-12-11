@@ -5,7 +5,6 @@ namespace Carbon\Laravel;
 use Carbon\Carbon;
 use Carbon\CarbonImmutable;
 use Carbon\CarbonInterval;
-use Illuminate\Support\Facades\Schema;
 use Carbon\CarbonPeriod;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Events\Dispatcher;
@@ -18,11 +17,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     public function boot()
     {
-        If (env('APP_ENV') !== 'local') {
-            $this->app['request']->server->set('HTTPS', true);
-        }
-
-        Schema::defaultStringLength(191);
         $this->updateLocale();
 
         if (!$this->app->bound('events')) {
