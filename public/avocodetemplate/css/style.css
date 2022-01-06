@@ -7,7 +7,7 @@
 }
 
 body{ 
-    font-family: "JF Flat Regular";
+	font-family: "JF Flat Regular", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
     background-color:#F8F8FA;
 }
 
